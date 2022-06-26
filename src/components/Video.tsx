@@ -9,6 +9,8 @@ import {
 
 import "@vime/core/themes/default.css"
 import { useGetLessonsBySlugQuery } from "../graphql/generated"
+import { Spin } from "./Spin"
+import { Link } from "react-router-dom"
 
 interface VideoProps {
   lessonSlug: string
@@ -20,11 +22,7 @@ export function Video(props: VideoProps) {
   })
 
   if (!data || !data.lesson) {
-    return (
-      <div className="flex-1">
-        <p>Carregando...</p>
-      </div>
-    )
+    return <Spin />
   }
 
   return (
@@ -67,26 +65,26 @@ export function Video(props: VideoProps) {
           </div>
 
           <div className="flex flex-col gap-4">
-            <a
-              href=""
+            <Link
+              to="/"
               className="p-4 text-sm bg-pink-700 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-pink-800 transition-colors"
             >
               <DiscordLogo size={24} />
               Comunidade do Discord
-            </a>
-            <a
-              href=""
+            </Link>
+            <Link
+              to="/"
               className="p-4 text-sm border border-purple-700 text-purple-700 flex items-center rounded font-bold uppercase gap-2 justify-center hover:bg-purple-700 hover:text-gray-100 transition-colors"
             >
               <Lightning size={24} />
               Acesse o desafio
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="gap-8 mt-20 grid grid-cols-2">
-          <a
-            href=""
+          <Link
+            to="/"
             className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
           >
             <div className="bg-pink-800 h-full p-6 flex items-center">
@@ -102,10 +100,10 @@ export function Video(props: VideoProps) {
             <div className="h-full p-6 flex items-center">
               <CaretRight size={24} />
             </div>
-          </a>
+          </Link>
 
-          <a
-            href=""
+          <Link
+            to="/"
             className="bg-gray-700 rounded overflow-hidden flex items-stretch gap-6 hover:bg-gray-600 transition-colors"
           >
             <div className="bg-pink-800 h-full p-6 flex items-center">
@@ -121,7 +119,7 @@ export function Video(props: VideoProps) {
             <div className="h-full p-6 flex items-center">
               <CaretRight size={24} />
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
