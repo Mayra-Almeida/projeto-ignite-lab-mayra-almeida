@@ -1,7 +1,7 @@
-import { gql, useMutation } from "@apollo/client"
 import { useState, FormEvent } from "react"
 import { useNavigate } from "react-router-dom"
 import { Logo } from "../components/Logo"
+import { Mockup } from "../components/Mockup"
 import { useCreateSubscriberMutation } from "../graphql/generated"
 
 export function Subscribe() {
@@ -26,15 +26,15 @@ export function Subscribe() {
   }
 
   return (
-    <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
+    <div className="min-h-screen bg-gradient-to-tr from-green-700 via-purple-700 to-rose-400 flex flex-col items-center">
       <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
         <div className="max-w-[640px]">
           <Logo />
 
           <h1 className="mt-8 text-[2.5rem] leading-tight">
             Construa uma{" "}
-            <strong className="text-blue-500">aplicação completa</strong>, do
-            zero, com <strong className="text-blue-500">React</strong>
+            <strong className="text-blue-300">aplicação completa</strong>, do
+            zero, com <strong className="text-blue-300">React</strong>
           </h1>
           <p className="mt-4 text-gray-200 leading-relaxed">
             Em apenas uma semana você vai dominar na prática uma das tecnologias
@@ -68,7 +68,7 @@ export function Subscribe() {
             <button
               type="submit"
               disabled={loading}
-              className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity disabled:opacity-50"
+              className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity disabled:opacity-50 hover:cursor-pointer"
             >
               Garantir minha vaga
             </button>
@@ -76,7 +76,9 @@ export function Subscribe() {
         </div>
       </div>
 
-      <img src="/src/assets/code-mockup.png" className="mt-10" alt="" />
+      <div className="mt-10">
+        <Mockup />
+      </div>
     </div>
   )
 }
