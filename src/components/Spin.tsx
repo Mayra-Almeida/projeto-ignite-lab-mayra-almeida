@@ -1,6 +1,6 @@
 export function Spin() {
   return (
-    <div className="flex-1 flex items-center justify-content flex-col mt-72">
+    <div className="flex-1 flex items-center justify-content flex-col mt-56">
       <div className="w-[150px] animate-spin">
         <svg
           className="h-12 w-12 mr-3"
