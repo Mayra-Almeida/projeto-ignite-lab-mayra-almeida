@@ -33,7 +33,7 @@ export function Lesson(props: LessonProps) {
         className={classNames(
           "rounded border border-gray-600 p-4 mt-2 group-hover:border-pink-600 transition-colors",
           {
-            "bg-green-500": isActiveLesson,
+            "bg-pink-600": isActiveLesson,
           }
         )}
       >
@@ -52,7 +52,15 @@ export function Lesson(props: LessonProps) {
               Conteúdo liberado
             </span>
           ) : (
-            <span className="text-sm text-purple-800 font-medium flex items-center gap-2">
+            <span
+              className={classNames(
+                "text-sm  font-medium flex items-center gap-2",
+                {
+                  "text-white": isActiveLesson,
+                  "text-purple-700": !isActiveLesson,
+                }
+              )}
+            >
               <Lock size={20} />
               Em breve
             </span>
